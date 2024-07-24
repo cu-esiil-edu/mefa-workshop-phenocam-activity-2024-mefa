@@ -123,13 +123,13 @@ You can filter the table by any of the available attributes (column names). For 
 
 ```{r}
 # Create a subset of only grassland sites 
-GR_sites <- subset(sitelist_table, primary_veg_type == "GR")  
+GR_sites <- subset(sitelist_table, primary_veg_type == "")  
 
 # View the first few grassland entries and entire table
 View(GR_sites)
 ```
 
-**Challenge**: Can you subset the sitelist_table by a different primary vegetation type? How about by a different variable (table column)? Use the code cell below.
+**Challenge**: Can you subset the sitelist_table by a different primary vegetation type. How about by a different variable (table column)? Use the code cell below.
 
 ```{r}
 
@@ -188,21 +188,21 @@ ggplotly(Site_map)
 
 #### Download & Plot Canopy Greenness
 
-Now, let's view some PhenoCam images and greenness data. Choose a site to explore, and enter the site name and relevant information in the cell below. For example, I chose the site "lacclair", which represents a deciduous broadleaf ("DB") vegetation type, and I chose to look at images from the year 2022. You'll also need to specify which region of interest (ROI) to use for your site. Recall that some sites have multiple ROIs, each with a unique ID number. You can view the possible ROIs for your site on the [PhenoCam website.](https://phenocam.nau.edu/webcam/)
+Now, let's view some PhenoCam images and greenness data. Choose a site to explore, and enter the site name and relevant information in the cell below. For example, I will choose the site "lacclair", which represents a deciduous broadleaf ("DB") vegetation type, and I chose to look at images from the year 2022. You'll also need to specify which region of interest (ROI) to use for your site. Recall that some sites have multiple ROIs, each with a unique ID number. You can view the possible ROIs for your site on the [PhenoCam website.](https://phenocam.nau.edu/webcam/)
 
 ```{r}
 # Choose site to explore 
 # Enter name exactly as it appears in the table/on the website
-site_name = "lacclair"
+site_name = ""
 
 # Indicate vegetation type (listed on site page)
-veg = "DB"
+veg = ""
 
 # Choose data year (for downloading images later)
-year = 2022
+year = 
 
 # Indicate ROI ID
-ROI = 1000
+ROI = 
 
 # View the objects to make sure correct
 site_name
@@ -241,10 +241,9 @@ plot(GCC_timeseries$date, GCC_timeseries$gcc_90,
      # Change font size
      cex = 1.5, cex.lab = 2, cex.axis = 2, cex.main = 3,
      # Add axis labels
-     xlab = "Date", ylab = "GCC", 
+     xlab = 'Date', ylab = 'GCC', 
      # Add title
-     main = paste0(site_name, ": ", "Canopy Greenness Timeseries"))
-
+     main = paste0(site_name, ': ', 'Canopy Greenness Timeseries'))
 ```
 
 *Note: Since the plot isn't saved as an object, it only appears in the built-in plot viewer for R. However, you can right click on the plot to copy and paste it elsewhere. If you accidentally close a plot and want to see it again, just re-run the code cell that created it.*
@@ -400,7 +399,8 @@ for(i in 1:n){
 }
 
 # Add title (feel free to edit the title below)
-mtext(paste0(site_name, ': ', 'Canopy Greenness Through the Months'), font = 2, cex = 1.8, outer = TRUE)
+mtext(paste0(site_name, ': ', 'Canopy Greenness Through the Months'), 
+      font = 2, cex = 1.8, outer = TRUE)
 ```
 
 Finally, we'll use those same images to create a gif that shows changes in phenology over time. This is great to use in presentations to visualize seasonal transitions!
@@ -436,7 +436,7 @@ As an example, here's the gif I made for the lacclair site. Your gif will be sav
 
 ### Explore another site!
 
-Now try this exercise with another PhenoCam site. Perhaps choose a different ecosystem type. Think about how seasonal greenness patterns differ between sites. What do you think causes these differences?
+Now try this exercise with another PhenoCam site. Perhaps choose a different ecosystem type. Think about how seasonal greenness patterns differ between sites. What so you think causes these differences?
 
 To do this, edit the cell near the beginning where you assign the site name, vegetation type, year, and ROI (in the "Download & Plot Canopy Greenness" section). Be sure to re-run that cell and all cells below it in sequential order.
 
