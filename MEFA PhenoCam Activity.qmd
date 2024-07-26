@@ -198,13 +198,13 @@ site_name = "lacclair"
 # Indicate vegetation type (listed on site page)
 veg = "DB"
 
-# Choose data year (for downloading images later)
+# Choose data year (we'll use this later)
 year = 2022
 
 # Indicate ROI ID
 ROI = 1000
 
-# View the objects to make sure correct
+# Check that changes worked
 site_name
 veg
 year
@@ -244,7 +244,6 @@ plot(GCC_timeseries$date, GCC_timeseries$gcc_90,
      xlab = "Date", ylab = "GCC", 
      # Add title
      main = paste0(site_name, ": ", "Canopy Greenness Timeseries"))
-
 ```
 
 *Note: Since the plot isn't saved as an object, it only appears in the built-in plot viewer for R. However, you can right click on the plot to copy and paste it elsewhere. If you accidentally close a plot and want to see it again, just re-run the code cell that created it.*
